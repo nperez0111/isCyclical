@@ -20,3 +20,7 @@ console.assert( isCyclical( [ {
 } ], {
     a: "ok"
 } ) );
+
+console.assert( !isCyclical( [ 1, 2, 3, 1, 2, 3 ], 2 ) );
+console.assert( !isCyclical( [ 1, 2, 3, 4, 1, 2, 3 ], 4 ) );
+console.assert( isCyclical( [ 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3 ], 4 ) );

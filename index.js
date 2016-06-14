@@ -7,19 +7,21 @@ var isCyclical = module.exports = function ( arr, query ) {
     } ).reverse();
     if ( sameAsQueryToIndex.length < 2 ) {
         return false;
-    } else {
-        var a = sameAsQueryToIndex[ 0 ],
-            b = sameAsQueryToIndex[ 1 ],
-            distance = a - b;
-        var possiblyCyclical = arr.filter( ( c, i ) => {
-                return i >= b;
-            } ),
-            cycleA = possiblyCyclical.filter( ( c, i ) => {
-                return i < distance;
-            } ),
-            cycleB = possiblyCyclical.filter( ( c, i ) => {
-                return i >= distance;
-            } );
-        return equal( cycleA, cycleB );
     }
+    var a = sameAsQueryToIndex[ 0 ],
+        b = sameAsQueryToIndex[ 1 ],
+        distance = a - b;
+    var possiblyCyclical = arr.filter( ( c, i ) => {
+            return i >= b;
+        } ),
+        cycleA = possiblyCyclical.filter( ( c, i ) => {
+            return i < distance;
+        } ),
+        cycleB = possiblyCyclical.filter( ( c, i ) => {
+            return i >= distance;
+        } );
+    if ( cycleA.length !== cycleB.length ) {
+        cycleB.push( query );
+    }
+    return equal( cycleA, cycleB );
 }
