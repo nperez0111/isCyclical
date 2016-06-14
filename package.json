@@ -1,0 +1,30 @@
+{
+    "name": "is-cyclical",
+    "version": "0.1.0",
+    "description": "Returns true if an array is cyclical at a specified value.",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nperez0111/isCyclical.git"
+    },
+    "keywords": [
+        "npm",
+        "nodejs",
+        "array",
+        "cyclical",
+        "repeating",
+        "sequence"
+    ],
+    "author": "Nick The Sick",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nperez0111/isCyclical/issues"
+    },
+    "homepage": "https://github.com/nperez0111/isCyclical#readme",
+    "dependencies": {
+        "deep-equal": "^1.0.1"
+    }
+}
