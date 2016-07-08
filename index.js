@@ -1,9 +1,14 @@
 var equal = require( 'deep-equal' );
-var isCyclical = module.exports = function ( arr, query ) {
+
+function isEqual( a, b ) {
+    return isCyclical.deepEquality ? equal( a, b ) : a == b;
+}
+
+function isCyclical( arr, query ) {
     var sameAsQueryToIndex = arr.map( ( c, i ) => {
         return i;
     } ).filter( c => {
-        return equal( arr[ c ], query );
+        return isEqual( arr[ c ], query );
     } ).reverse();
     if ( sameAsQueryToIndex.length < 2 ) {
         return false;
@@ -23,5 +28,10 @@ var isCyclical = module.exports = function ( arr, query ) {
     if ( cycleA.length !== cycleB.length ) {
         cycleB.push( query );
     }
-    return equal( cycleA, cycleB );
+
+    return isEqual( cycleA, cycleB );
 }
+
+isCyclical.deepEquality = true;
+
+module.exports = isCyclical;

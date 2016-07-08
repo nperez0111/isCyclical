@@ -24,3 +24,11 @@ console.assert( isCyclical( [ {
 console.assert( !isCyclical( [ 1, 2, 3, 1, 2, 3 ], 2 ) );
 console.assert( !isCyclical( [ 1, 2, 3, 4, 1, 2, 3 ], 4 ) );
 console.assert( isCyclical( [ 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3 ], 4 ) );
+isCyclical.deepEquality = true;
+console.assert( isCyclical( [ 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3 ].map( function ( a ) {
+    return [ a ];
+} ), [ 4 ] ) );
+isCyclical.deepEquality = false
+console.assert( !isCyclical( [ 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3 ].map( function ( a ) {
+    return [ a ];
+} ), [ 4 ] ) );
