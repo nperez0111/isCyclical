@@ -1,6 +1,6 @@
 {
     "name": "is-cyclical",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Returns true if an array is cyclical at a specified value.",
     "main": "index.js",
     "scripts": {
