@@ -4,9 +4,7 @@
     "description": "Returns true if an array is cyclical at a specified value.",
     "main": "index.js",
     "scripts": {
-        "test": "node test/index.js",
-        "publish-please": "publish-please",
-        "prepublish": "publish-please guard"
+        "test": "node test"
     },
     "repository": {
         "type": "git",
@@ -30,6 +28,6 @@
         "deep-equal": "^1.0.1"
     },
     "devDependencies": {
-        "publish-please": "^2.1.4"
+
     }
 }
