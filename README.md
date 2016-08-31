@@ -1,4 +1,4 @@
-isCyclical
+isCyclical [![Build Status](https://travis-ci.org/nperez0111/isCyclical.svg?branch=master)](https://travis-ci.org/nperez0111/isCyclical)
 ==========
 
 Returns true if an array will continue to be cyclical if the value supplied is pushed onto it.
